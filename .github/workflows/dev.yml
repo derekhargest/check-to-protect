@@ -19,7 +19,7 @@ jobs:
           |
           cd wp-content/themes/custom/${{ env.THEME_NAME }}/
           chmod +x build.sh
-          build.sh
+          ./build.sh
   deploy:
     runs-on: ubuntu-latest
     needs: build

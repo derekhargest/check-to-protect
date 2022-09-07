@@ -19,6 +19,8 @@ npm install
 echo "Building Theme"
 npm run build
 
+cd ../
+
 echo "Removing Excluded Files from Package"
 
 REMOVEABLE_ITEMS=`cat exclude.txt`

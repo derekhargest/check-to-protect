@@ -5,8 +5,7 @@ on:
       - 'dev'
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,6 +19,10 @@ jobs:
           |
           chmod +x .github/build.sh
           .github/build.sh
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to WPEngine
         uses: wpengine/github-action-wpe-site-deploy@v3.0
         with:

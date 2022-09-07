@@ -1,0 +1,9 @@
+// colors
+$color__high: 		red;
+$color__medium: 	orange;
+$color__low: 		yellow;
+
+// styles
+$style__high: 		5px $color__high dashed;
+$style__medium: 	5px $color__medium dotted;
+$style__low: 		5px $color__low solid;

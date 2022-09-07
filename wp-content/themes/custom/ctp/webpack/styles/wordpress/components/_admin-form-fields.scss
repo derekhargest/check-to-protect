@@ -1,0 +1,42 @@
+div#wpbody,
+div.mce-container-body,
+div.wp-core-ui {
+	input[type=text],
+	input[type=search],
+	input[type=radio],
+	input[type=tel],
+	input[type=time],
+	input[type=url],
+	input[type=week],
+	input[type=password],
+	input[type=checkbox],
+	input[type=color],
+	input[type=date],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=email],
+	input[type=month],
+	input[type=number],
+	select,
+	textarea,
+	button {
+
+		&:focus {
+			border-color: $gold;
+			box-shadow: 0 0 2px rgba($bronze, .8);
+		}
+	}
+
+	div.wrap {
+		.page-title-action {
+			color: $admin-link-color;
+			transition: background-color .2s ease,
+						color .2s ease;
+
+			&:hover {
+				color: $gold;
+				border-color: $admin-link-color;
+			}
+		}
+	}
+}

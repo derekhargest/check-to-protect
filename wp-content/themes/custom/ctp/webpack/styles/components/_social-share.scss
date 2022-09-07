@@ -1,0 +1,51 @@
+/* =================================================================================
+~ Social Share
+================================================================================= */
+
+.social-shares {
+    @include make-container();
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5em;
+}
+
+.social-share {
+    align-items: center;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: $font-weight-demi;
+    line-height: 1;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+
+    &--facebook {
+        background-color: $facebook;
+
+        &:hover,
+        &:focus {
+            background-color: darken( $facebook, 15% );
+        }
+    }
+
+    &--twitter {
+        background-color: $twitter;
+
+        &:hover,
+        &:focus {
+            background-color: darken( $twitter, 15% );
+        }
+    }
+
+    &:hover,
+    &:focus {
+        color: $white;
+    }
+
+    &__icon {
+        font-size: 1.5em;
+        margin-left: 1rem;
+    }
+}

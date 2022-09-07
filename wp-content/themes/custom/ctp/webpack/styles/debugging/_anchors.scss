@@ -1,0 +1,11 @@
+a:not([title]),
+a[title=""] {
+	@include debug-alert($color__high, $style__high);
+}
+
+/*
+a:not([aria-label]),
+a[aria-label=""] {
+	@include debug-alert($color__high, $style__high);
+}
+*/

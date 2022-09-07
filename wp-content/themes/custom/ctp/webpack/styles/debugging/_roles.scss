@@ -1,0 +1,23 @@
+// <header id="header" role="banner"></header>
+header:not([role="banner"]) {
+	&#header {
+		@include debug-alert($color__medium, $style__medium);
+	}
+}
+
+// <main role="main"></main>
+main:not([role="main"]) {
+	@include debug-alert($color__medium, $style__medium);
+}
+
+// <footer role="contentinfo"></footer>
+footer:not([role="contentinfo"]) {
+	@include debug-alert($color__medium, $style__medium);
+}
+
+// <form role="search"><input type="search" />
+input[type="search"] {
+	form:not([role="search"]) & {
+		@include debug-alert($color__medium, $style__medium);
+	}
+}

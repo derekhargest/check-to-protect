@@ -1,0 +1,21 @@
+body.wp-admin {
+	#adminmenu {
+
+		a {
+			text-shadow: 1px 1px 1px rgba($black, 0);
+			transition: background-color .3s ease,
+						color .2s ease,
+						text-shadow .1s ease;
+
+			&:hover {
+				text-shadow: 1px 1px 1px rgba($black, .5);
+			}
+		}
+
+		#collapse-menu {
+			.collapse-button-label {
+				font-size: 14px;
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+/* =================================================================================
+~ Overlay - for overlaying objects over the target element with this class
+================================================================================= */
+@mixin absolute-top-left() {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+body.locked {
+	position: fixed;
+	overflow: hidden;
+	width: 100%;
+}
+
+.overlay {
+	@include absolute-top-left();
+	overflow: hidden;
+	z-index: -99;
+
+	&__color {
+		@include absolute-top-left();
+		background-color: rgba($black, .35);
+		z-index: 1;
+
+	}
+
+	&__video {
+		@include absolute-top-left();
+
+		.video {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+
+			height: auto;
+			-ms-transform: translateX(-50%) translateY(-50%);
+			-moz-transform: translateX(-50%) translateY(-50%);
+			-webkit-transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%);
+			background-size: cover;
+
+			@include media-breakpoint-down(md) {
+				height: 100%;
+			}
+
+			@include media-breakpoint-up(lg) {
+				width: auto;
+			}
+		}
+	}
+
+	&__image {
+		background-position: top center;
+		background-size: cover;
+		height: 100%;
+	}
+}

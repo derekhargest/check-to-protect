@@ -1,0 +1,46 @@
+{
+    "key": "group_5bc9d68688e4c",
+    "title": "News Archive Page",
+    "fields": [
+        {
+            "key": "field_5bc9d6868d311",
+            "label": "Disclaimer Text",
+            "name": "disclaimer",
+            "type": "wysiwyg",
+            "instructions": "If needed, please utilize the WYSIWYG below to include a disclaimer after your News Archive post listing.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-template-news-archive.php"
+            }
+        ]
+    ],
+    "menu_order": 4,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt"
+    ],
+    "active": 1,
+    "description": "<br\/>Fields for the <b><a href=\"\/wp-admin\/post.php?post=202&action=edit\" title=\"Click here to open your News Archive page\">News Archive<\/a><\/b> posts page.",
+    "modified": 1540238555
+}

@@ -1,0 +1,65 @@
+/* =================================================================================
+~ Description:				Button – elements associated with button classes
+================================================================================= */
+$animation: .25s ease-in-out;
+
+.btn,
+.button {
+	background-color: transparent;
+	color: $dark-jungle-green;
+	display: inline-block;
+	font-size: 2rem;
+	font-weight: $font-weight-bold;
+	padding: 1.2rem 3rem;
+	text-transform: uppercase;
+	transition: box-shadow $animation,
+				color $animation,
+				background-color $animation;
+	-webkit-appearance: none;
+
+	&:hover,
+	&:focus {
+		background-color: $dark-jungle-green;
+		box-shadow: 0 0 5px 2px rgba($black, .2);
+		color: $gold;
+	}
+
+	&.yellow {
+		background-color: $gold;
+		color: $dark-jungle-green;
+
+		&:hover,
+		&:focus {
+			background-color: $dark-jungle-green;
+			color: $gold;
+		}
+	}
+
+	&.black {
+		background-color: transparent;
+		border: 3px solid $dark-jungle-green;
+		color: $dark-jungle-green;
+
+		&:hover,
+		&:focus {
+			background-color: $dark-jungle-green;
+			color: $gold;
+		}
+	}
+
+	&.form-toggle {
+		background-color: $dark-jungle-green;
+		color: $gold;
+
+		&:hover,
+		&:focus {
+			background-color: $gold;
+			color: $dark-jungle-green;
+		}
+	}
+
+	&.print {
+		padding: 1.2rem;
+		margin-left: 1rem;
+	}
+}

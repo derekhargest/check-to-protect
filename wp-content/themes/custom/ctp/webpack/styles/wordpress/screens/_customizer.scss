@@ -1,0 +1,14 @@
+body.wp-customizer {
+	font-family: $font-family-base;
+
+	strong {
+		font-weight: $font-weight-medium;
+	}
+
+	div#customize-theme-controls {
+
+		h3.accordion-section-title {
+			font-weight: $font-weight-medium;
+		}
+	}
+}

@@ -1,0 +1,92 @@
+/* =================================================================================
+~ Posts
+================================================================================= */
+
+.posts {
+	.page-heading { }
+}
+
+.post {
+	&__list { }
+
+	&__item { }
+
+	&__heading { }
+
+	&__content { }
+
+	&__link-wrapper { }
+
+	&__link { }
+}
+
+
+
+.posts {
+	.page-heading {
+		font-weight: $font-weight-bold;
+	}
+}
+
+.post {
+	&__list {
+		margin-top: 3rem;
+	}
+
+	&__item {
+		border: 2px solid $dark-jungle-green;
+		box-sizing: border-box;
+		margin-bottom: 3rem;
+		padding: 15px 20px 30px;
+		transition: box-shadow .2s ease;
+
+		&:hover {
+			cursor: pointer;
+			box-shadow: 0 0 5px 2px rgba($black, .2);
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__heading {
+		font-size: 3rem;
+		font-weight: $font-weight-light;
+		line-height: 3.6rem;
+		text-transform: uppercase;
+	}
+
+	&__content { }
+
+	&__link-wrapper { }
+
+	&__link {
+		color: $black;
+		display: inline-block;
+		font-size: 1.6rem;
+		font-weight: $font-weight-bold;
+		margin-top: 2rem;
+		position: relative;
+		text-transform: uppercase;
+		transform: translate3d(0,0,0);
+
+		&:after {
+			content: ">";
+			display: block;
+			height: 16px;
+			position: absolute;
+			right: -20px;
+			top: 0;
+			transition: right .2s ease;
+			width: 16px;
+		}
+
+		&:hover {
+
+			&:after {
+				right: -25px;
+			}
+		}
+	}
+}

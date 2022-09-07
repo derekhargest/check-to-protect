@@ -1,0 +1,31 @@
+/**
+ * Base - global styles, utilities, mixins, and variables
+ */
+@import "base/functions";
+@import "base/variables";
+@import "base/mixins";
+@import "base/utilities";
+@import "base/fonts";
+@import "base/reboot";
+
+
+/**
+ * Templates - styles specific to an individual page or template
+ */
+@import "templates/page-home";
+
+
+/**
+ * Components - reusable components
+ */
+@import "components/wysiwyg";
+
+
+body,
+body.wp-autoresize {
+	@extend .wysiwyg;
+	padding-top: 10px !important;
+	padding-right: 10px !important;
+	padding-bottom: 10px !important;
+	padding-left: 10px !important;
+}

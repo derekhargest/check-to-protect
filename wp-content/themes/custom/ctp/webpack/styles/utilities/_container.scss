@@ -1,0 +1,16 @@
+/* =================================================================================
+~ Container
+================================================================================= */
+
+.container {
+    @include make-container();
+
+    &--max-width {
+        @include make-container-max-width();
+    }
+
+    &--padded {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}

@@ -1,0 +1,45 @@
+/* =================================================================================
+~ WordPress - classes used by the default WordPress TinyMCE editor
+================================================================================= */
+
+// https://codex.wordpress.org/CSS#WordPress_Generated_Classes
+.align {
+    &left {
+        float: left;
+        margin: 0 1em 1em 0;
+    }
+
+    &right {
+        float: right;
+        margin: 0 0 1em 1em;
+    }
+
+    &center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// https://codex.wordpress.org/Caption_Shortcode
+.wp-caption {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .wp-caption-text {
+        font-size: 1.1rem;
+		font-style: italic;
+		margin-top: 1rem;
+		text-align: center;
+	}
+}
+
+// https://codex.wordpress.org/Content_Width
+.size {
+    &-full { }
+    &-large { }
+    &-medium { }
+    &-thumbnail { }
+}

@@ -1,0 +1,17 @@
+/* =================================================================================
+~ Page Header
+================================================================================= */
+
+.page-header {
+	margin-bottom: 1.5rem;
+
+	&__title {
+		font-size: $font-size-base * 2;
+		font-weight: $font-weight-bold;
+	}
+
+	&__meta {
+		font-size: .85em;
+		margin-top: 0.5rem;
+	}
+}

@@ -1,0 +1,22 @@
+/* =================================================================================
+~ Menu
+================================================================================= */
+
+// Large and larger
+@include media-breakpoint-up(lg) {
+	.menu {
+		display: flex;
+
+		&#menu-footer-spanish {
+			display: -webkit-box;
+		}
+
+		&-item {
+			margin-right: 1.5rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

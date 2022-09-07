@@ -1,0 +1,4 @@
+// unicode function for handling custom font libraries
+@function unicode($str) {
+	@return unquote("\"") + $str + unquote("\"");
+}

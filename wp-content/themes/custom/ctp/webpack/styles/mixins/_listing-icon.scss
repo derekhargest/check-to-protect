@@ -1,0 +1,28 @@
+@mixin listing-icon($icon, $color, $font-size, $right, $top, $position: relative, $animate: false) {
+	&:after {
+		color: $color;
+		content: $icon;
+		display: block;
+		font-family: $font-family-icon;
+		font-size: $font-size;
+		font-weight: $font-weight-light;
+		height: auto;
+		position: $position;
+		right: $right;
+		top: $top;
+		width: auto;
+		z-index: 1;
+	}
+
+	@if $animate == true {
+		&:after {
+			transition: right .2s ease;
+		}
+
+		&:hover {
+			&:after {
+				right: $right - 10px;
+			}
+		}
+	}
+}

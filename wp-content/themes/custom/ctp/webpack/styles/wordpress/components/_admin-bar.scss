@@ -1,0 +1,20 @@
+body.admin-bar,
+body.logged-in {
+	font-family: $font-family-base;
+
+	div#wpadminbar {
+
+		// custom admin bar font
+		* {
+			font-family: $font-family-base;
+		}
+
+		// hide the wordpress logo within the admin bar (far left)
+		ul#wp-admin-bar-root-default {
+
+			li#wp-admin-bar-wp-logo {
+				display: none;
+			}
+		}
+	}
+}

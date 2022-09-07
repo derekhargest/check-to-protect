@@ -1,0 +1,26 @@
+/* =================================================================================
+~ Description:				Main
+~ Associated Partial:		/ctp/wrapper.php
+================================================================================= */
+
+.main {
+	flex: 1 1 auto;
+
+	section {
+		position: relative;
+
+		.content {
+			@include media-breakpoint-down(md) {
+				@include make-container();
+				padding: 3rem 2rem;
+				padding-top: 6rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				@include make-container-max-width();
+				margin: 0 auto;
+				padding: 5rem 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+// If an external link is defined using target="_blank", display an icon beside the link
+
+.wysiwyg {
+
+	a[target="_blank"] {
+		display: inline-block;
+		padding-right: 22px;
+		position: relative;
+
+		&:after {
+			bottom: -2px;
+			color: $dark-sprint-green;
+			content: "\f08e";
+			display: block;
+			font-family: "icon-library", serif;
+			font-size: 1.6rem;
+			font-weight: 300;
+			height: auto;
+			position: absolute;
+			right: 2px;
+			transition: color .1s ease-in-out;
+			width: auto;
+			z-index: 1;
+		}
+
+		&:hover {
+
+			&:after {
+				color: lighten($dark-sprint-green, 10%);
+			}
+		}
+	}
+}

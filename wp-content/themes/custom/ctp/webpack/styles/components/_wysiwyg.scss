@@ -1,0 +1,124 @@
+/* =======================================================================================
+~ WYSIWYG - intended to be used on any element whose content is populated the CMS WYSIWYG
+======================================================================================= */
+
+.wysiwyg {
+	line-height: $line-height-base;
+	width: 100%;
+
+	a:not(.btn):not(.button) {
+		color: $dark-jungle-green;
+		font-weight: $font-weight-bold;
+		text-decoration: underline;
+		transition: color .1s ease-in-out;
+
+		&:hover {
+			color: $bronze;
+		}
+	}
+
+	ul,
+	ol {
+		list-style: none;
+		margin-left: 1.8rem;
+		padding-left: 2rem;
+
+		ul, ol {
+			margin-bottom: 0;
+		}
+	}
+
+	ol {
+		list-style: decimal outside;
+	}
+
+	ul {
+		list-style: disc outside;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: $cardinal;
+		font-weight: $font-weight-bold;
+	}
+	h1 { font-size: $font-size-base * 2 }
+	h2 { font-size: $font-size-base * 2.25 }
+	h3 { font-size: $font-size-base * 2 }
+	h4 { font-size: $font-size-base * 1.75 }
+	h5 { font-size: $font-size-base * 1.5 }
+	h5 { font-size: $font-size-base * 1.25 }
+	h6 { font-size: $font-size-base }
+
+	p,
+	ul {
+		@include media-breakpoint-down(md) {
+			font-size: 1.4rem;
+			line-height: 2rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			font-size: 1.8rem;
+			line-height: 2.5rem;
+		}
+	}
+
+    blockquote {
+    	border-left: 4px solid $gray-lighter;
+    	padding-left: 1.5rem;
+    }
+
+    hr { }
+
+	pre {
+		white-space: pre-wrap;
+	}
+
+    img,
+	figure {
+    	max-width: 100%;
+    }
+
+	> * {
+		margin-bottom: 2rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	.wp-caption {
+
+		&-text,
+		&-dd {
+			font-size: 1.1rem;
+			font-style: italic;
+			margin-top: 1rem;
+			text-align: center;
+		}
+	}
+
+	@import "../components/button";
+
+	@include media-breakpoint-only(xs) {
+		//> .wp-caption,
+		> img {
+			width: 100% !important;
+			height: auto !important;
+		}
+	}
+
+	p + ul {
+		margin-top: 0 !important;
+	}
+
+	p {
+		margin-bottom: 0 !important;
+	}
+
+	p ~ p {
+		margin-top: 2rem;
+	}
+}

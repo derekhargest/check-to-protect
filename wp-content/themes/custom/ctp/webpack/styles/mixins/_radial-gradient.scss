@@ -1,0 +1,7 @@
+@mixin radial-gradient($color, $opacityStart, $opacityEnd, $filterStart, $filterEnd) {
+	// http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density
+	background: -webkit-radial-gradient(center, ellipse cover, rgba($color, .65) 0%,rgba($color, $opacityEnd) 100%);
+	background: -moz-radial-gradient(center, ellipse cover, rgba($color, $opacityStart) 0%, rgba($color, $opacityEnd) 100%);
+	background: radial-gradient(ellipse at center, rgba($color, $opacityStart) 0%, rgba($color, $opacityEnd) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$filterStart}', endColorstr='#{$filterEnd}',GradientType=1 );
+}

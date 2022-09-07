@@ -1,0 +1,46 @@
+/* =================================================================================
+~ Module:					Hero
+~ Associated Partial:		/ctp/partials/module-hero.php
+================================================================================= */
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	@include media-breakpoint-down(md) {
+		min-height: 150px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: 350px;
+	}
+
+	&__content {
+
+		@include media-breakpoint-down(md) {
+			padding: 20px;
+		}
+
+		h1 {
+			color: $white;
+			font-weight: $font-weight-bold;
+			text-shadow: $heading-text-shadow;
+
+			@include media-breakpoint-down(md) {
+				font-size: 3rem;
+				line-height: 3.8rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 6rem;
+				line-height: 7.5rem;
+			}
+		}
+
+		strong {
+			color: $gold;
+		}
+	}
+}

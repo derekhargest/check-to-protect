@@ -1,0 +1,81 @@
+{
+    "key": "group_593478637dc03",
+    "title": "News Archive",
+    "fields": [
+        {
+            "key": "field_5bc9d20a8cadd",
+            "label": "External Link",
+            "name": "external_link",
+            "type": "url",
+            "instructions": "The \"Read More\" link for this news item will link here.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5bc9d2288cade",
+            "label": "Publication",
+            "name": "publication",
+            "type": "text",
+            "instructions": "Enter name of publication here. Links and formatting should not be entered in this field.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5bc9d2388cadf",
+            "label": "Content",
+            "name": "content",
+            "type": "textarea",
+            "instructions": "Limited to 400 characters. Links should not be added to this field.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 400,
+            "rows": 8,
+            "new_lines": "br"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt"
+    ],
+    "active": 1,
+    "description": "<br\/>Fields for <b><a href=\"\/wp-admin\/edit.php\" title=\"Click here to open your News Archives\">News Archive<\/a><\/b> posts.",
+    "modified": 1540238638
+}

@@ -1,0 +1,31 @@
+// allow dashicons to be used for custom MCE buttons
+i.mce-i-icon {
+	font: $font-weight-normal 1.4rem/1 dashicons;
+	padding: 0;
+	speak: none;
+	vertical-align: bottom;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+div.mce-toolbar {
+	.mce-btn-group {
+		.mce-btn.mce-primary {
+			background: #db8027;
+			border-color: #b1671e #9c5a1a #9c5a1a;
+			color: #fff;
+			-webkit-box-shadow: 0 1px 0 #9c5a1a;
+			box-shadow: 0 1px 0 #9c5a1a;
+			text-shadow: 0 -1px 1px #9c5a1a, 1px 0 1px #9c5a1a, 0 1px 1px #9c5a1a, -1px 0 1px #9c5a1a;
+
+			&:hover,
+			&:focus {
+				background: #dd8834;
+				border-color: #9c5a1a;
+				color: #fff;
+				-webkit-box-shadow: 0 1px 0 #9c5a1a;
+				box-shadow: 0 1px 0 #9c5a1a;
+			}
+		}
+	}
+}

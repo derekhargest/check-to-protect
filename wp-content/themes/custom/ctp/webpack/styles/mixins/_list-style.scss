@@ -1,0 +1,20 @@
+// list style extenders to globally reset all lists and extend the mixins accordingly (where needed)
+@mixin bullets($style: 'disc') {
+	list-style: $style outside;
+	margin: 1rem 0;
+	padding: 0 0 0 3rem;
+}
+
+@mixin numbers($style: 'decimal') {
+	list-style: $style outside;
+	margin: 1rem 0;
+	padding: 0 0 0 3rem;
+}
+
+@mixin content-list-reset() {
+	// TODO: Revisit the specificity issues here
+	body .main .content .wysiwyg & {
+		padding-left: 0;
+		list-style: none;
+	}
+}

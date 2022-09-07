@@ -1,0 +1,130 @@
+/* =================================================================================
+~ Fonts
+================================================================================= */
+@import url("//fonts.googleapis.com/css?family=Work+Sans:300,400,400,500,600,700");
+
+// custom icon library
+$icomoon-font-path:		"/wp-content/themes/#{$theme-name}/fonts" !default;
+$icomoon-font-filename:	"icomoon" !default;
+$icomoon-font-path:		"fonts" !default;
+
+$ico-minus:				"\e903";
+$ico-plus:				"\e906";
+$ico-bell:				"\e907";
+$ico-budget:			"\e904";
+$ico-vehicle:			"\e905";
+$ico-arrow-left:		"\f060";
+$ico-arrow-right:		"\f061";
+$ico-warning:			"\e900";
+$ico-print:				"\e901";
+$ico-search:			"\e902";
+$ico-airbag:			"\e908";
+$ico-camera:			"\e914";
+$ico-plate:				"\e913";
+$ico-alert:				"\e912";
+$ico-pound:				"\e915";
+
+// font-face registration
+@font-face {
+	font-family: "#{$icomoon-font-filename}";
+	src: url("#{$icomoon-font-path}/#{$icomoon-font-filename}.eot");
+	src:
+			url("#{$icomoon-font-path}/#{$icomoon-font-filename}.ttf") format("truetype"),
+			url("#{$icomoon-font-path}/#{$icomoon-font-filename}.woff") format("woff"),
+			url("#{$icomoon-font-path}/#{$icomoon-font-filename}.svg#{$icomoon-font-filename}") format("svg");
+	font-style: normal;
+	font-weight: normal;
+}
+
+// class attribute selector catch-all
+[class^="ico-"],
+[class*=" ico-"] {
+	font-family: '#{$icomoon-font-filename}' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	speak: none;
+	line-height: 1;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+// icon unicode associations
+.ico {
+	&-minus {
+		&:before {
+			content: $ico-minus;
+		}
+	}
+	&-plus {
+		&:before {
+			content: $ico-plus;
+		}
+	}
+	&-bell {
+		&:before {
+			content: $ico-bell;
+		}
+	}
+	&-budget {
+		&:before {
+			content: $ico-budget;
+		}
+	}
+	&-vehicle {
+		&:before {
+			content: $ico-vehicle;
+		}
+	}
+	&-airbag {
+		&:before {
+			content: $ico-airbag;
+		}
+	}
+	&-arrow-left {
+		&:before {
+			content: $ico-arrow-left;
+		}
+	}
+	&-arrow-right {
+		&:before {
+			content: $ico-arrow-right;
+		}
+	}
+	&-warning {
+		&:before {
+			content: $ico-warning;
+		}
+	}
+	&-print {
+		&:before {
+			content: $ico-print;
+		}
+	}
+	&-search {
+		&:before {
+			content: $ico-search;
+		}
+	}
+	&-pound {
+		&:before {
+			content: $ico-pound;
+		}
+	}
+	&-camera {
+		&:before {
+			content: $ico-camera;
+		}
+	}
+	&-plate {
+		&:before {
+			content: $ico-plate;
+		}
+	}
+	&-alert {
+		&:before {
+			content: $ico-alert;
+		}
+	}
+}

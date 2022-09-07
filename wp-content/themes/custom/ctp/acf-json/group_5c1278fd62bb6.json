@@ -1,0 +1,43 @@
+{
+    "key": "group_5c1278fd62bb6",
+    "title": "Google Tag Manager",
+    "fields": [
+        {
+            "key": "field_5c12790d1ca50",
+            "label": "Event Snippet",
+            "name": "event_snippet",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "Inject GTM on a page specific basis.",
+    "modified": 1560623019
+}

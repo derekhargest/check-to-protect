@@ -1,0 +1,16 @@
+// variables for the Mindgrub colors
+$color__01: #2c215a;
+$color__02: #333333;
+$color__03: #ff8200;
+$color__04: #aa0000;
+$color__05: #ffffff;
+
+// wordpress variables for the admin color schemes
+$base-color: $color__04;
+$icon-color: $color__05;
+$highlight-color: $color__03;
+$notification-color: $color__01;
+
+$form-checked: $base-color;
+
+@import "colors/admin";

@@ -1,0 +1,4 @@
+@mixin debug-alert($color, $priority) {
+	background-color: rgba($color, .25);
+	border: $priority;
+}

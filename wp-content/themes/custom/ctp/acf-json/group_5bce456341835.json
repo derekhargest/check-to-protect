@@ -1,0 +1,144 @@
+{
+    "key": "group_5bce456341835",
+    "title": "Header",
+    "fields": [
+        {
+            "key": "field_5bce45cbd97a1",
+            "label": "Hero",
+            "name": "hero_boolean",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display Hero?",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_5bcf31d5255a8",
+            "label": "Background Image Positioning",
+            "name": "hero_position",
+            "type": "select",
+            "instructions": "Select the positioning of your hero image. The first value is the \"vertical\" position, the second value is the \"horizontal\" position.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bce4586d979f",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "top center": "Top Center",
+                "center center": "Center Center",
+                "bottom center": "Bottom Center"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5bce4586d979f",
+            "label": "Background Image",
+            "name": "hero_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bce45cbd97a1",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ".jpg"
+        },
+        {
+            "key": "field_5bce459bd97a0",
+            "label": "Hero Text",
+            "name": "hero_text",
+            "type": "text",
+            "instructions": "<strong>NOTE:<\/strong> Wrapping text with <code style=\"display:inline;\">&lt;strong&gt;&lt;\/strong&gt;<\/code> tags will make it display in the (brand) gold color on the front end.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5bce45cbd97a1",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-template-bulk-vin.php"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "excerpt"
+    ],
+    "active": true,
+    "description": "<br\/>Fields for the header section on the default page template.",
+    "modified": 1605062200
+}

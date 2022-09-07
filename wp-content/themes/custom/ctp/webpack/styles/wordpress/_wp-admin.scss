@@ -1,0 +1,123 @@
+// admin globals
+html {
+	height: 100vh; // fixes the load-styles.php height: 100% bug
+}
+
+body.wp-admin {
+	background: url('/wp-content/uploads/2018/10/PATTERN__dust_scratches.png') top left repeat $admin-default-bg;
+
+	a {
+		color: $admin-link-color;
+
+		&:hover {
+			color: darken($admin-link-color, 10%);
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 1px $admin-link-color,
+						0 0 2px 1px rgba($admin-link-color, .8);
+		}
+	}
+
+	#media-upload a.del-link,
+	div.dashboard-widget-submit input,
+	.subsubsub a,
+	.subsubsub a.current {
+		&:hover {
+			color: darken($admin-link-color, 10%);
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 1px $admin-link-color,
+						0 0 2px 1px rgba($admin-link-color, .8);
+		}
+	}
+
+	// reduce the font weight of <strong> (depends on the font)
+	strong {
+		font-weight: $font-weight-medium;
+	}
+
+	// hide the permalink for post/page types
+	//&.post-type-page,
+	&.post-type-post {
+		div#poststuff {
+			#edit-slug-box {
+				display: none !important;
+			}
+		}
+	}
+
+	div#wpwrap {
+		div#wp-auth-check {
+			width: 400px;
+
+			iframe {
+				div#login {
+					box-sizing: border-box;
+				}
+			}
+		}
+	}
+
+	div#wpfooter {
+
+		// thank you for creating with wordpress text
+		#footer-thankyou {
+			display: none;
+		}
+
+		// version x.x.x text
+		#footer-upgrade {
+			display: none;
+		}
+	}
+
+	table.wp-list-table {
+
+		// reduce the weight of row titles
+		.row-title {
+			font-weight: $font-weight-medium;
+		}
+	}
+
+	span,
+	div {
+		&.notice,
+		&.query-notice {
+			&.notice-info,
+			.query-notice-default,
+			.query-notice-hint {
+				border-left-color: $admin-link-color !important;
+			}
+		}
+	}
+
+	button#wp-link-close {
+		color: $admin-link-color;
+
+		&:focus,
+		&:hover {
+			color: darken($admin-link-color, 10%);
+			box-shadow: 0 0 0 1px $admin-link-color,
+						0 0 2px 1px rgba($admin-link-color, .8);
+		}
+	}
+
+	.plugin-update-tr.active td,
+	.plugins .active th.check-column,
+	.contextual-help-tabs .active {
+		border-left-color: $admin-link-color !important;
+	}
+}
+
+// ONLY when viewing the site and logged in (not active while in the wp-admin)
+body.logged-in {
+
+	// offset the admin bar in the event you have conflicting globals
+	div#wpadminbar {
+		@include media-breakpoint-down(sm) {
+			top: -46px;
+		}
+	}
+}

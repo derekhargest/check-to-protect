@@ -1,0 +1,29 @@
+// dependencies
+@import "base/functions";
+@import "base/variables";
+@import "base/mixins";
+@import "base/utilities";
+@import "base/fonts";
+@import "modules/widget";
+
+// variables to be passed and used within the admin specific partials
+$admin-link-color:	#b76b20;
+$admin-login-bg:	#ffcd00;
+$admin-default-bg:	#f1f1f1;
+$admin-btn-color-a: #b1671e;
+$admin-btn-color-b: #9c5a1a;
+$admin-btn-color-c: #dd8834;
+
+// wordpress admin panel
+@import "wordpress/wp-admin";
+@import "wordpress/screens/customizer";
+@import "wordpress/screens/login";
+@import "wordpress/components/admin-bar";
+@import "wordpress/components/admin-sidebar";
+@import "wordpress/components/admin-form-fields";
+
+// wordpress plugins
+@import "wordpress/plugins/acf";
+@import "wordpress/plugins/tinymce";
+@import "wordpress/plugins/minify-html";
+@import "wordpress/plugins/admin-columns";

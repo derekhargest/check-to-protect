@@ -1,0 +1,45 @@
+/* =================================================================================
+~ Template:					Home
+================================================================================= */
+
+// template body class override (do not use unless specificity is misbehaving)
+.event{
+    h2{
+      font-size: 3.5rem;
+      line-height: 4rem;
+      margin: 1rem auto;
+      margin-top: 3rem;
+      @include media-breakpoint-down(md) {
+        font-size: 2.6rem;
+        line-height: 3rem;
+        margin-top: 1.5rem;
+      }
+    }
+    p{
+      font-size: 2rem;
+      margin-top: 0;
+      line-height: 3.4rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+    }
+
+    ul{
+      padding-top: 1rem;
+      list-style-type: disc;
+      list-style-position: inside;
+      li{
+        line-height: 3.4rem;
+        @include media-breakpoint-down(md) {
+          line-height: 2.4rem;
+        }
+        span{
+          font-size: 2rem;
+          @include media-breakpoint-down(md) {
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,32 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 1;
+    display: none;
+    &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        font-size: 2.2rem;
+    }
+    p {
+        color: white;
+        margin-top: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    i {
+        color: $gold;
+        font-size: 4rem;
+    }
+}

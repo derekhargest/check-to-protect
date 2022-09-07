@@ -1,0 +1,114 @@
+x/* =================================================================================
+~ Description:				Footer
+~ Associated Partial:		/ctp/partials/footer.php
+================================================================================= */
+
+#ctp_recall {
+	position: fixed;
+	bottom: 0;
+	z-index: 99999;
+
+	@include media-breakpoint-up(md) {
+		display: none;
+	}
+}
+
+.footer {
+	background-color: $white;
+	font-size: 1.4rem;
+	font-weight: $font-weight-normal;
+	line-height: 2.4rem;
+
+	@include media-breakpoint-down(md) {
+		padding: 3.4rem $mobile-padding-sides;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 1rem 0;
+	}
+
+	&.tablet {
+		.footer__container {
+			justify-content: center;
+		}
+	}
+
+	&__container {
+		@include make-container();
+		display: flex;
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+		}
+
+		@include media-breakpoint-up(lg) {
+			@include make-container-max-width();
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__left {
+		align-items: center;
+		display: flex;
+		min-width: 55%;
+
+		@include media-breakpoint-down(md) {
+			justify-content: center;
+			margin-bottom: 1.8rem;
+		}
+
+		&--image {
+			max-width: 100px;
+			width: 100px;
+		}
+
+		&--text {
+			margin-left: 2rem;
+		}
+	}
+
+	&__right {
+
+		.menu {
+
+			&--footer {
+				align-items: center;
+
+				@include media-breakpoint-down(md) {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					text-align: center;
+				}
+			}
+
+			&-item {
+				@include media-breakpoint-down(md) {
+					//margin-bottom: 1rem;
+				}
+
+				@include media-breakpoint-up(lg) {
+					border-right: 1px solid $dark-jungle-green;
+					padding-right: 1.5rem;
+				}
+
+				&:last-of-type {
+					border-right: none;
+					padding-right: 0;
+				}
+
+				a {
+					border-bottom: 1px solid transparent;
+					transition: color .2s ease, border-bottom-color .2s ease;
+
+					&:hover,
+					&:focus {
+						border-bottom-color: darken($dark-jungle-green ,20%);
+						color: darken($dark-jungle-green ,20%);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+/* =================================================================================
+~ Template:					Print styles for vin lookup results
+================================================================================= */
+
+html {
+	// add some spacing for the body to avoid it kissing the margins
+	body {
+		padding: 20px;
+	}
+
+	// hide any of the button rows
+	.recalls__buttons,
+	.recall-list__button,
+	.recall-list__content--buttons {
+		display: none;
+	}
+
+	// display all the collapsed content
+	.recall-list__content {
+		display: block;
+		margin-top: 3rem;
+	}
+
+	// remove the extra space generated
+	.recall-list__contact--dealer {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,315 @@
+/* =================================================================================
+~ Description:				WordPress Search Input
+~ Associated Partial:		/ctp/partials/form-search.php
+~							/ctp/partials/form-vin-search.php
+================================================================================= */
+$input-theme-color: $outer-space-a;
+//$input-max-width:	1000px;
+$input-max-width:	none;
+
+@mixin alert-visibility($display) {
+	// if 1 of the 3 errors are true, this should control their visibility
+	&[data-validation-error="true"] {
+		display: $display;
+	}
+}
+
+.vin-search {
+	position: relative;
+	width: 100%;
+
+	@include media-breakpoint-down(md) {
+		@include make-container();
+		padding: 0 1.5rem 3rem;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include make-container-max-width();
+		margin: 0 auto;
+	}
+
+	&__input {
+		background-color: $white;
+		border: none;
+		border-radius: 0;
+		box-shadow: 0 5px 9px 3px rgba($black, .23);
+		box-sizing: content-box;
+		//flex: 1 0 100%;
+		font-weight: $font-weight-normal;
+		margin: 0 auto;
+		outline: none;
+		position: relative;
+		text-transform: uppercase;
+		transition: box-shadow .2s ease;
+		z-index: 2; 										// display ABOVE validation errors
+		-webkit-appearance: textfield;
+		-webkit-box-sizing: content-box;
+
+		&:focus {
+			box-shadow: 0 0 10px 2px darken($gold, 15%);
+		}
+
+		&[data-validation-error="true"] {
+			box-shadow: 0 5px 9px 3px rgba($cardinal, .23);
+		}
+
+		&.state {
+			width: 20%;
+		    margin-right: 2rem;
+		}
+
+		&.plate {
+			width: 80%;
+		}
+
+		@include media-breakpoint-down(md) {
+			@include placeholder($grey, 1.7rem);
+
+			color: $input-theme-color;
+			font-size: 1.6rem;
+			line-height: 1.6rem;
+			width: 100%;
+			padding: 2rem 5rem 2rem 2rem;
+
+			&:focus,
+			&:hover {
+				cursor: text;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			@include placeholder($grey, 1.7rem);
+
+			font-size: 1.7rem;
+			line-height: 1.7rem;
+			color: $input-theme-color;
+			max-width: $input-max-width;
+			padding: 3rem 9rem 3rem 3rem;
+			width: 100%;
+		}
+
+	}
+
+	&__error {
+		background-color: lighten($cardinal, 50%);
+		//border: 1px solid $cardinal;
+		border-radius: 1rem;
+
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+
+		box-shadow: 0 5px 9px 3px rgba($black, .23);
+
+		color: $cardinal;
+		display: none;
+		left: 50%;
+		max-width: $input-max-width;
+		padding: 2rem;
+		position: absolute;
+		text-align: left;
+		width: 100%;
+		transform: translateX(-50%);
+		transition: opacity .2s ease-in-out;
+		z-index: 1;										// display UNDER the search form input
+
+		@include alert-visibility(block);
+
+		@include media-breakpoint-down(sm) {
+			width: calc(100% - 30px);
+		}
+
+		// handle show/hide of alert
+		&[data-validation-error='false'] {
+			opacity: 0;
+		}
+
+		&[data-validation-error='true'] {
+			display: block;
+			opacity: 1;
+		}
+
+		// specific to the /vin-check page
+		.results-vin-look-up & {
+			@include media-breakpoint-up(lg) {
+				margin: 0 auto;
+				width: 75%;
+			}
+		}
+
+		&-title {
+			font-size: 2rem;
+			font-weight: $font-weight-bold;
+		}
+
+		&-list {
+			margin-top: 1.6rem;
+		}
+
+		&-list-item {
+			display: none;
+			list-style-type: disc;
+			margin: 1rem 0 1rem 3rem;
+
+			// strip the spacing on top of the first list item
+			&:first-of-type {
+				margin-top: 0;
+			}
+
+			// if 1 of the 3 errors are true, this should control their visibility
+			@include alert-visibility(list-item);
+
+			// title of the alter error
+			&--title {
+				position: relative;
+				outline: none;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			// information blocks
+			&--description {
+				font-size: 1.4rem;
+				line-height: 2rem;
+				margin: 1rem 0;
+			}
+
+			// handle show/hide of alert
+			&[data-validation-error='true'] {
+				display: list-item;
+			}
+		}
+	}
+
+	&__close {
+		color: lighten($cardinal, 25%);
+		cursor: pointer;
+		font-size: 3rem;
+		padding: 20px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: color 2s ease-in-out;
+		z-index: 2;
+
+		&:focus,
+		&:hover,
+		&:active {
+			color: $cardinal;
+		}
+	}
+}
+
+.vin-search__form {
+	align-items: center;
+	min-height: 32px;
+	position: relative;
+	@include media-breakpoint-down(md) {
+		margin: 0 auto;
+		max-width: 100%;
+	}
+	.results-vin-look-up & {
+		@include media-breakpoint-up(lg) {
+			margin: 0 auto;
+			width: 75%;
+		}
+	}
+}
+
+.vin-search__form:not(.vin-search__form--home) {
+	display: flex;
+}
+
+.vin-search__form.vin-search__form--home {
+	text-align: right;
+	display: block;
+	@media screen and (min-width: 700px) {
+		display: flex;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.custom-select {
+		text-align: left;
+		margin: 0 0 1rem auto;
+		position: relative;
+		z-index: 20;
+		@media screen and (min-width: 700px) {
+			margin: 0 1rem 0 0;
+		}
+	}
+	.vin-search__input {
+		box-sizing: border-box;
+		padding: 1.25rem;
+		&.vin {
+			width: 100%;
+			margin: 0;
+			@media screen and (min-width: 700px) {
+				margin: 0 1rem 0 0;
+			}
+		}
+		&.plate {
+			width: 100%;
+			margin: 0;
+			@media screen and (min-width: 700px) {
+				margin: 0 1rem 0 0;
+			}
+		}
+	}
+	button.btn.vin-search__btn--home {
+		//border: 3px solid $gold;
+		background-color: $gold;
+		margin: 1rem 0 0 0;
+		color: #231f20;
+		padding: 1.4rem;
+		width: 100%;
+		font-size: 1.7rem;
+		@media screen and (min-width: 700px) {
+			width: auto;
+			margin: 0;
+		}
+		&:hover, &:focus {
+			cursor: pointer;
+			background-color: #ffd602;
+			color: #231f20;
+		}
+	}
+}
+
+.vin-search__btn:not(.vin-search__btn--home) {
+	@include center-align(vertical);
+	cursor: pointer;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	z-index: 3;
+
+	&:focus {
+		outline: none;
+	}
+
+	@include media-breakpoint-down(md) {
+		color: $outer-space-b;
+		height: 24px;
+		right: 16px;
+		width: 24px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		color: $outer-space-b;
+		height: 47px;
+		right: 40px;
+		width: 47px;
+	}
+
+	.ico-search {
+		@include media-breakpoint-down(md) {
+			font-size: 2.4rem;
+		}
+
+		@include media-breakpoint-up(lg) {
+			font-size: 4.8rem;
+		}
+	}
+}

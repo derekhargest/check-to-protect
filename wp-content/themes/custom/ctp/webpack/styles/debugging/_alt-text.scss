@@ -1,0 +1,4 @@
+img:not([alt]),
+img[alt=""] {
+	@include debug-alert($color__high, $style__high);
+}

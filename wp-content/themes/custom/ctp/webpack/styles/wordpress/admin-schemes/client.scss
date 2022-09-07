@@ -1,0 +1,9 @@
+// wordpress variables for the admin color schemes
+$base-color: #322f31;
+$icon-color: #fff;
+$highlight-color: #db8027;
+$notification-color: #be1e2d;
+
+$form-checked: $base-color;
+
+@import "colors/admin";

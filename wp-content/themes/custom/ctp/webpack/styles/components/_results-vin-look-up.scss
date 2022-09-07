@@ -1,0 +1,320 @@
+/* =================================================================================
+~ Description:				VIN Look Up AFTER previous search
+~ Associated Partial:		/ctp/page-template-results.php
+================================================================================= */
+.results-vin-look-up .grid_wrapper {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	gap: 4rem;
+}
+.results-vin-look-up {
+	.vin-search .custom-select {
+		font-size: 1.7rem;
+		line-height: 2.25rem;
+		box-shadow: none;
+	}
+	background-color: $gold;
+	.vin-search div#form-title {
+		display: block;
+	}
+	.recalls__share {
+		text-align: right;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display:flex;
+		padding-bottom: 8rem;
+		padding-right: 0rem;
+		p {
+			margin-top: 0.9rem;
+			margin-right: 1rem;
+		}
+		.social-shares {
+			margin-top: 0;
+			width: auto;
+		}
+	}
+	.grid_wrapper {
+		display:grid;
+		grid-template-columns: 2fr 3fr;
+		gap: 4rem;
+		@include media-breakpoint-down(lg) {
+			grid-template-columns: 1fr;
+		}
+		#formtoggle {
+			text-align: left;
+			margin-bottom: 0;
+			.error {
+				color: $cardinal;
+				margin: auto;
+				max-width: 600px;
+			}
+			#btn-vin {
+				margin-left: 0;
+			}
+			#btn-plate {
+				margin-left: 0;
+				@media (min-width: 700px) {
+					margin-left: 7.5px;
+				}
+			}
+			button {
+				width: 100%;
+				padding: 1.25rem 0;
+				max-width: 300px;
+				@media (min-width: 700px) {
+					width: 46%;
+					padding: 1.25rem 0;
+					max-width: 225px;
+				}
+
+			}
+			p {
+				letter-spacing: 0;
+				font-size: 1.75rem;
+				font-weight: 500;
+				line-height: 1;
+			}
+		}
+		.vin-form-title {
+			font-weight: 500;
+			font-size: 1.75rem;
+			margin-bottom: 1rem;
+			line-height: 1;
+		}
+		.vin-search__form.vin-search__form--home {
+			margin-left: 0;
+		}
+		.vin-search__input {
+			box-shadow: none;
+			padding-top: 15.5px;
+			padding-bottom: 15.5px;
+		}
+		.vin-search__form.vin-search__form--home button.btn.vin-search__btn--home {
+			background-color: $dark-jungle-green;
+			color: $gold;
+			padding: 16px 3rem;
+		}
+		.vin-search__form.vin-search__form--home {
+			width: 100%;
+			max-width: 700px;
+		}
+	}
+
+	>.content {
+		&.content {
+			@include media-breakpoint-down(md) {
+				padding: 3rem 2rem 2rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding: 8rem 0 3rem;
+				padding-bottom: 0rem;
+			}
+
+			// text under the vin input on the results page
+			&:last-of-type {
+				padding-top: 0;
+			}
+		}
+
+		h1 {
+			color: $dark-jungle-green;
+			text-align: left;
+			max-width: 815px;
+
+			@include media-breakpoint-down(md) {
+				font-size: 2.5rem;
+				line-height: 2.5rem;
+				margin-bottom: 2rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 5rem;
+				line-height: 5rem;
+				margin-bottom: 2rem;
+			}
+		}
+
+		h2 {
+			color: $dark-jungle-green;
+			font-weight: $font-weight-normal;
+			text-align: left;
+			margin-top: 4rem;
+			margin-bottom: 4rem;
+			@include media-breakpoint-down(md) {
+				font-size: 1.4rem;
+				line-height: 2rem;
+			}
+		}
+	}
+
+	&.tablet {
+
+		#formtoggle p, p {
+			font-size: 2.5rem;
+		}
+
+		#formsubmit input[type="text"], .select-selected {
+			@include placeholder($grey, 2rem);
+			font-size: 2rem;
+		}
+
+		#state-select {
+		    padding: 2.25rem 3rem;
+		}
+
+		.vin-search .custom-select {
+			font-size: 2rem;
+			line-height: 2.2rem;
+		}
+	}
+
+	.ip-limit-reached {
+		color: $dark-jungle-green;
+	    font-size: 2rem;
+	    line-height: 1.3;
+		padding-bottom: 4rem;
+
+	    a {
+	    	font-weight: $font-weight-bold;
+
+	    	&:hover {
+	    		text-decoration: underline;
+	    	}
+	    }
+	}
+	.vin-search .powered-by {
+		p {
+			font-size: 2rem;
+			margin-right: 1rem;
+		}
+		justify-content: right;
+		padding-right: 0;
+		padding-bottom: 20rem;
+	}
+}
+
+.recalls__share.results-footer {
+	display: flex;
+	justify-content: flex-end;
+	float: initial;
+	p {
+		margin-right: 1rem;
+		margin-top: 1rem;
+	}
+	.social-shares {
+		width: auto;
+		margin: 0;
+	}
+}
+
+.search-again-banner {
+	background: $gold;
+	text-align: left;
+	margin-bottom: 5rem;
+	padding: 6rem 0;
+	padding-left: 2rem;
+	a {
+		display: block;
+		margin: auto;
+		font-size: 2.25rem;
+		font-weight: 800;
+		text-decoration: underline;
+		@media (min-width: 992px) and (min-width: 576px) {
+			max-width: 540px;
+		}
+		@media (min-width: 992px) {
+			max-width: 1140px;
+			margin: 0 auto;
+		}
+	}
+}
+
+p.vin-form-title.form-title {
+	display: none;
+}
+p.vin-form-title.form-title.active {
+	display: block;
+}
+
+.recall-list__button {
+	display: none !important;
+}
+
+.recalls .results-vin {
+	font-size: 2.25rem;
+	margin-bottom: 4rem;
+}
+
+.results-vin-look-up .recalls__share {
+	/* text-align: right; */
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-bottom: 4rem;
+}
+.results-vin-look-up .recalls__share .social-shares {
+	margin-top: 0;
+	width: auto;
+}
+
+.social-shares {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	margin-top: 0.5em;
+}
+
+
+
+.ip-limit-reached {
+	padding-bottom: 4rem;
+}
+
+/* Social Share in Results Footer */
+.content {
+	.recalls__share {
+		display: grid;
+		grid-template-columns: 1fr;
+		max-width: 700px;
+		align-items: center;
+		margin-top: 5rem;
+		margin-bottom: 2rem;
+
+		p {
+			text-align: center;
+			line-height: 1.3;
+			max-width: 250px;
+			margin: 0 auto;
+			margin-bottom: 1rem;
+
+		}
+		.social-shares {
+			margin-top: 0;
+			justify-content: center;
+		}
+		@media (min-width: 700px) {
+			grid-template-columns: 3fr 1fr;
+			p {
+				margin-right: 1.5rem;
+				margin-bottom: 0;
+				text-align: right;
+				max-width: 700px
+			}
+			.social-shares {
+				margin-top: 0;
+				justify-content: flex-end;
+			}
+		}
+	}
+}

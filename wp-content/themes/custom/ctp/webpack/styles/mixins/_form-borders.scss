@@ -1,0 +1,12 @@
+// re-usable border styles
+@mixin border($type: null) {
+
+	@if $type == 'full' {
+		border: 4px solid $dark-sprint-green;
+	}
+
+	@if $type == 'bottom' {
+		border: 0;
+		border-bottom: 4px solid $dark-sprint-green;
+	}
+}

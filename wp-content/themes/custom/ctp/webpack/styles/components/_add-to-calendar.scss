@@ -1,0 +1,88 @@
+$primary_button_padding:	1rem 1.5rem;
+$option_button_padding:		1rem;
+$both_button_font_size:		1.4rem;
+
+
+.add-to-calendar {
+	display: inline-block;
+	margin-top: 4rem;
+	position: relative;
+
+	.button {
+		font-size: 1.4rem;
+		line-height: 1.4rem;
+		padding: 1rem 1.5rem;
+		position: relative;
+
+		&:hover,
+		&:focus {
+			cursor: pointer;
+		}
+
+		.fa {
+			margin-left: .75rem;
+		}
+	}
+
+	&__buttons {
+		box-shadow: 1px 0 10px 0 rgba($black, .2);
+		display: none;
+		flex-direction: column;
+
+		&.active {
+			display: flex;
+		}
+
+		li {
+			background-color: $white;
+			border: 1px solid $timberwolf;
+			border-bottom: 0;
+			cursor: pointer;
+			transition: background-color .2s ease-in-out;
+
+			&:hover,
+			&:focus {
+				background-color: $news-articles;
+			}
+
+			&:last-of-type {
+				border-bottom: 1px solid $timberwolf;
+			}
+		}
+	}
+
+	&__google,
+	&__outlook {
+		a {
+			background-color: transparent;
+			display: block;
+			font-size: $both_button_font_size;
+			line-height: $both_button_font_size;
+			padding: $option_button_padding;
+			width: 100%;
+		}
+	}
+
+	&__google { }
+
+	&__outlook { }
+
+	&__ics {
+		form {
+			display: inline;
+			padding: $option_button_padding;
+		}
+
+		input[type='submit'] {
+			@include reset-input-btn;
+
+			cursor: pointer;
+			font-size: $both_button_font_size;
+			line-height: $both_button_font_size;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}

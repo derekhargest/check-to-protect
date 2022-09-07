@@ -1,0 +1,193 @@
+/* =================================================================================
+~ Description:				Accordions
+~ Associated Partial:		/ctp/partials/results-available.php
+================================================================================= */
+$accordion-button-size:		40px;
+
+.recall-list {
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+
+	&__recall {
+		border-top: 1px solid $dark-jungle-green;
+		padding: 3rem 0;
+		position: relative;
+
+		&--high-priority {
+			border-top: none;
+			padding-top: 7rem;
+
+			&:before {
+				background: repeating-linear-gradient(
+					-45deg,
+					$cardinal,
+					$cardinal 2rem,
+					$white 2rem,
+					$white 4rem
+				);
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 4rem;
+			}
+		}
+
+		header {
+			@include media-breakpoint-down(md) {
+				padding-right: 4.25rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding-right: calc(#{$accordion-button-size} * 2);
+			}
+		}
+	}
+
+	&__heading,
+	&__content {
+		span {
+			display: block;
+		}
+	}
+
+	&__heading {
+
+		span {
+			display: block;
+		}
+
+		&--date {
+			font-size: 2.2rem;
+			font-weight: $font-weight-medium;
+			margin-bottom: 2rem;
+		}
+
+		&--title {
+			color: $cardinal;
+			font-size: 3.5rem;
+			font-weight: $font-weight-bold;
+			margin-bottom: $recall_section_spacing;
+			text-transform: uppercase;
+		}
+
+		&--description {
+			line-height: 2rem;
+
+			span {
+				font-weight: $font-weight-bold;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	&__content {
+		margin-top: 0;
+		display: none; // by default, hide the accordion content
+
+		&.show {
+			display: flex;
+			flex-direction: column;
+			margin-top: 3rem;
+		}
+
+		section {
+			margin-bottom: $recall_section_spacing;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		span {
+			font-weight: $font-weight-bold;
+			margin-bottom: $recall_heading_spacing;
+		}
+
+		&--safety,
+		&--remedy {
+			line-height: 2rem;
+		}
+
+		&--remedy-status {
+			font-size: 2rem;
+			line-height: 2rem;
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+
+			&.available {
+				color: $dark-sprint-green;
+			}
+
+			&.not-available {
+				color: $cardinal;
+			}
+
+			&.unknown {
+				color: $blue;
+			}
+		}
+
+		&--campaign {
+			span {
+				display: inline;
+			}
+		}
+
+		&--buttons {
+			display: flex;
+
+			@include media-breakpoint-down(md) {
+				justify-content: space-between;
+			}
+		}
+	}
+
+	&__button {
+		@include listing-icon(unicode('\e903'), $dark-jungle-green, 1.8rem, 0, 0);
+		border: 1px solid $dark-jungle-green;
+		border-radius: 2rem;
+		cursor: pointer;
+		display: block;
+		font-weight: $font-weight-light;
+		height: $accordion-button-size;
+		margin-left: auto;
+		padding: 1rem;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		text-transform: uppercase;
+		transition: background-color .2s ease,
+					color .2s ease;
+		top: 4rem;
+		width: $accordion-button-size;
+
+		.recall-list__recall--high-priority & {
+			top: 8rem;
+		}
+
+		&:after {
+			color: $dark-jungle-green;
+			max-height: $accordion-button-size;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&.collapsed {
+			@include listing-icon(unicode('\e906'), inherit, 1.8rem, 0, 0);
+		}
+
+		&:hover {
+			background-color: $dark-jungle-green;
+
+			&:after {
+				color: $white;
+			}
+		}
+	}
+}

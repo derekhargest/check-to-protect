@@ -1,0 +1,208 @@
+$login__dimensions: 50px;
+
+@mixin link-style() {
+  color: lighten($dark-jungle-green, 20%);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: $outer-space-a;
+    text-decoration: underline;
+  }
+}
+
+// wp-login
+body.login-action-login,
+body.login-action-lostpassword {
+  background: url(/wp-content/uploads/2017/06/Styled-Yellow-BG.png) center/cover
+    no-repeat $admin-login-bg;
+  color: $outer-space-b;
+  font: normal $font-weight-medium 1.6rem/1.8rem $font-family-base;
+
+  // login
+  div#login {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-down(md) {
+      padding: 2rem 0;
+      width: 95%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 4rem 0 2rem;
+      width: 400px;
+    }
+
+    // form wrapper for the login
+    form#loginform {
+      box-shadow: 0 1px 8px 3px rgba($black, 0.13);
+
+      input {
+        &:focus {
+          border-color: $manatee;
+          box-shadow: 0 0 5px darken($gold, 15%);
+        }
+
+        // checkmark for "Remember Me"
+        &[type="checkbox"]:checked:before {
+          color: darken($gold, 15%);
+        }
+      }
+    }
+
+    // header logo
+    h1 {
+      a {
+        background: url(/wp-content/uploads/2018/10/CTP_4C__REV.png) center
+          no-repeat transparent;
+        background-size: contain;
+        color: $dark-jungle-green;
+        display: block;
+        font-size: 2rem;
+        height: 100px;
+        line-height: 2.4rem;
+        padding: 2rem 0;
+        outline: 0;
+        margin: 0 auto;
+        position: relative;
+        text-indent: -9999px;
+        width: 271px;
+      }
+    }
+
+    // successful log out
+    p.message {
+      background-color: $dark-sprint-green;
+      border-left: 4px solid lighten($dark-sprint-green, 30%);
+      color: $white;
+      font-weight: $font-weight-light;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    // login error
+    div#login_error {
+      background-color: $red;
+      border-left-color: lighten($red, 20%);
+      font-size: 16px;
+
+      a {
+        color: $white;
+      }
+
+      &:not(strong) {
+        font-weight: $font-weight-light;
+      }
+    }
+
+    // "Lost your password" link
+    p#nav {
+      text-align: center;
+
+      a {
+        @include link-style();
+      }
+    }
+
+    // "Back to ..." link
+    p#backtoblog {
+      text-align: center;
+      padding: 0;
+
+      a {
+        color: darken($gold, 20%);
+        transition: color 0.2s ease-in-out;
+
+        &:hover,
+        &:focus {
+          color: darken($gold, 50%);
+        }
+      }
+    }
+
+    // "Privacy Policy" page link
+    div.privacy-policy-page-link {
+      margin: 30px 0;
+
+      .privacy-policy-link {
+        @include link-style();
+        border: 1px solid $white;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 10px 15px;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover,
+        &:focus {
+          background-color: $white;
+        }
+      }
+    }
+
+    // Forgot Password link
+    form#loginform,
+    form#lostpasswordform {
+      input#wp-submit {
+        background-color: $bronze;
+        border-color: $admin-btn-color-a $admin-btn-color-b $admin-btn-color-b;
+        color: $white;
+        box-shadow: 0 1px 0 $admin-btn-color-b;
+        transition: background-color 0.1s ease, border-color 0.1s ease,
+          box-shadow 0.2s ease;
+        text-shadow: 0 -1px 1px $admin-btn-color-b, 1px 0 1px $admin-btn-color-b,
+          0 1px 1px $admin-btn-color-b, -1px 0 1px $admin-btn-color-b;
+
+        &:hover {
+          background-color: $admin-btn-color-c;
+          border-color: $admin-btn-color-b;
+          color: $white;
+          box-shadow: 0 1px 0 $admin-btn-color-b;
+        }
+
+        &:active {
+          background-color: $admin-btn-color-a;
+          border-color: $admin-btn-color-b;
+          -webkit-box-shadow: inset 0 2px 0 $admin-btn-color-b;
+          box-shadow: inset 0 2px 0 $admin-btn-color-b;
+        }
+      }
+    }
+  }
+}
+
+// re-authenticate modal
+div#wp-auth-check-wrap {
+  // frame of the modal
+  div#wp-auth-check {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  div#wp-auth-check-bg {
+    background-color: rgba(23, 19, 0, 0.7);
+    opacity: 1;
+  }
+
+  // close button on the modal
+  button.wp-auth-check-close {
+    color: $outer-space-b;
+    transition-property: border, background, color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+
+    &:focus,
+    &:hover {
+      color: $outer-space-a;
+    }
+  }
+
+  // login form iframe
+  div#wp-auth-check-form iframe {
+    height: 100%;
+  }
+}

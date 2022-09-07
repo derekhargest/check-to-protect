@@ -1,0 +1,20 @@
+/* ==============================================================================
+~ Module:					News Archive
+~ Associated Partial(s):	/ctp/_page-template-news-archive.php
+================================================================================= */
+
+.blog {
+	background-color: $news-articles;
+
+	.content {
+		h1, h2, h3, h4, h5, h6 {
+			color: $dark-jungle-green;
+		}
+
+		&.content {
+			@include media-breakpoint-down(md) {
+				padding: 4rem 2rem;
+			}
+		}
+	}
+}

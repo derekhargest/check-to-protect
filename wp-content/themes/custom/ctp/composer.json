@@ -1,0 +1,8 @@
+{
+    "name": "gmmb/ctp",
+    "description": "Check to Protect",
+    "type": "project",
+    "require": {
+        "google/recaptcha": "^1.2"
+    }
+}

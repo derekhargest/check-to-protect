@@ -1,0 +1,15 @@
+/* =================================================================================
+~ The purpose of these partials are to test for common audit issues
+~ DO NOT ENABLE WHEN BUILDING PRODUCTION ASSETS
+================================================================================= */
+
+// core dependencies
+@import "variables";
+@import "mixins";
+
+// partials
+@import "alt-text";
+@import "anchors";
+@import "font-size";
+@import "pre-debug";
+@import "roles";

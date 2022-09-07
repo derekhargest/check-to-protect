@@ -13,6 +13,8 @@ jobs:
         # Load theme specific ENV variables
       - name: Load .env file
         uses: xom9ikk/dotenv@v1.0.2
+        with:
+          path: wp-content/themes/custom/${{ env.THEME_NAME }}
       - name: Build Dependencies
         working-directory: "wp-content/themes/custom/${{ env.THEME_NAME }}"
         run:

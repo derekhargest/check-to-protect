@@ -3,7 +3,9 @@
 ================================================================================= */
 
 // Set border box sizing and reset margin/padding on all elements
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -11,14 +13,17 @@
 
 html {
 	font-size: 62.5%; // Ensures 1rem = 10px
-    -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
-    -ms-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone
-    -ms-overflow-style: scrollbar; // Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so we force a non-overlapping, non-auto-hiding scrollbar to counteract
-    -webkit-tap-highlight-color: rgba($black, 0); // Change the default tap highlight to be completely transparent in iOS
+	-webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS
+	-ms-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone
+	-ms-overflow-style: scrollbar; // Setting @viewport causes scrollbars to overlap content in IE11 and Edge, so we force a non-overlapping, non-auto-hiding scrollbar to counteract
+	-webkit-tap-highlight-color: rgba(
+		$black,
+		0
+	); // Change the default tap highlight to be completely transparent in iOS
 }
 
 body {
-	background-color: $snow;
+	background-color: #000 !important;
 	color: $dark-jungle-green;
 	font-family: $font-family-base;
 	font-size: $font-size-base;
@@ -28,12 +33,26 @@ body {
 }
 
 // Shim for HTML5 structural elements to display correctly ( IE10, older browsers )
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
 	display: block;
 }
 
 // Headlines
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	color: $cardinal;
 	font-family: $font-family-base;
 	font-weight: $font-weight-bold;
@@ -52,23 +71,30 @@ address {
 }
 
 // Prevent `sub` and `sup` elements from affecting the line height in
-sub, sup {
+sub,
+sup {
 	position: relative;
-	font-size: .85em;
+	font-size: 0.85em;
 	line-height: 0;
 	vertical-align: baseline;
 }
-sub { bottom: -.25em; }
-sup { top: -.5em; }
+sub {
+	bottom: -0.25em;
+}
+sup {
+	top: -0.5em;
+}
 
 // Code
-pre, code {
+pre,
+code {
 	font-family: $font-family-monospace;
 	font-size: 1em; // Correct the odd `em` font sizing in all browsers.
 }
 
 // Lists
-ul, ol {
+ul,
+ol {
 	list-style: none;
 }
 
@@ -113,7 +139,9 @@ table {
 	empty-cells: show;
 	font-size: 1em;
 }
-caption, th, td {
+caption,
+th,
+td {
 	vertical-align: top;
 	text-align: inherit;
 	font-weight: normal;
@@ -121,14 +149,14 @@ caption, th, td {
 
 // Suppress the focus outline on elements that cannot be accessed via keyboard
 [tabindex="-1"]:focus {
-    outline: 0 !important;
+	outline: 0 !important;
 }
 
 // IE10+ doesn't honor `<meta name="viewport">` in some cases.
 @at-root {
-    @-ms-viewport {
-        width: device-width;
-    }
+	@-ms-viewport {
+		width: device-width;
+	}
 }
 
 /* =================================================================================
@@ -136,19 +164,25 @@ caption, th, td {
 ================================================================================= */
 
 // Extra small and larger
-@include media-breakpoint-up(xs) {}
+@include media-breakpoint-up(xs) {
+}
 
 // Small and larger
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(sm) {
+}
 
 // Medium and larger
-@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(md) {
+}
 
 // Large and larger
-@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(lg) {
+}
 
 // Extra large and larger
-@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(xl) {
+}
 
 // Extra small only
-@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(xs) {
+}
